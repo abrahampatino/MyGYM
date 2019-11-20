@@ -1,0 +1,72 @@
+﻿@model IEnumerable<Proyectov1.Models.Persona>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>MIS EMPLEADOS</h1>
+
+<p>
+    <a href="/Admin/Empleados/Create">Nuevo Empleado</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre(s)
+            </th>
+            <th>
+                Apellidos
+            </th>
+            <th>
+                RFC
+            </th>
+            <th>
+                IMSS
+            </th>
+            <th>
+                Usuario
+            </th>
+            <th>Email</th>
+            <th>Estatus</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @String.Concat(item.PerNombre, " ", item.PerNombre2)
+            </td>
+            <td>
+                @String.Concat(item.PerPaterno, " ", item.PerMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpRfc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EmpImss)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Usu.UsuName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Usu.UsuCorr)
+            </td>
+            @if (item.PerEstado.Value)
+            {
+                <td>Activo</td>
+            }
+            else
+            {
+                <td>Inactivo</td>
+            }
+            <td>
+                <a href="/Admin/Empleados/Edit/@item.PerId">Editar</a>|
+                <a href="/Admin/Empleados/Delete/@item.PerId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

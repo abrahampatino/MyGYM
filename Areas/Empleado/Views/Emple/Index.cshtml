@@ -1,0 +1,13 @@
+﻿@using System.Security.Claims;
+@{
+    ViewData["Title"] = "Home Page";
+
+    { string user = string.Empty; }
+    string name = User.Identity.Name;
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido @name</h1>
+    <p>Visualice a los socios que atendera, planee las rutinas de los mismos.</p>
+    <p>Precione sobre la barra de tareas para comenzar.</p>
+</div>

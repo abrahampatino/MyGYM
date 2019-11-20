@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Proyectov1.Models.Aparato>
+
+@{
+    ViewData["Title"] = "Index";
+    
+}
+
+<h1>MIS TIPOS DE APARATOS</h1>
+
+<p>
+    
+    <a href="/Admin/Aparatos/Create">Nuevo Tipo de Aparatos</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Tipo de Aparato
+            </th>
+            <th>
+                Descripci&oacute;n
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApaNombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApaDescripcion)
+            </td>
+            <td>
+                <a href="/Admin/Aparatos/Edit/@item.ApaId">Editar</a>|                
+                <a href="/Admin/Aparatos/Delete/@item.ApaId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

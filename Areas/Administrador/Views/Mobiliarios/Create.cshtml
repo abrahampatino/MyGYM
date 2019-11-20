@@ -1,0 +1,44 @@
+﻿@model Proyectov1.Models.Mobiliario
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Agregar Mobiliario</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MobApaNombre" class="control-label">Nombre de Aparato</label>
+                <input asp-for="MobApaNombre" class="form-control" />
+                <span asp-validation-for="MobApaNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApaId" class="control-label">Tipo de Aparato</label>
+                <select asp-for="ApaId" class="form-control" asp-items="ViewBag.ApaId"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApaEstatus" class="control-label">Estatus</label>
+                <select asp-for="ApaEstatus" class="form-control">
+                    <option value="True" selected>Activo</option>
+                    <option value="False">Inactivo</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Agregar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/Admin/Mobiliario">Regresar a listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,38 @@
+﻿@model Proyectov1.Models.Aparato
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Agregar Nuevo Tipo de Aparato</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form action="/Admin/Aparatos/Create" method="post">
+
+            <div class="form-group">
+                <label class="control-label" for="ApaNombre">Tipo de Aparato</label>
+                <input class="form-control" type="text" id="ApaNombre" name="ApaNombre" value="">
+                <span class="text-danger field-validation-valid" data-valmsg-for="ApaNombre" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label" for="ApaDescripcion">Descripci&oacute;n</label>
+                <input class="form-control" type="text" id="ApaDescripcion" name="ApaDescripcion" value="">
+                <span class="text-danger field-validation-valid" data-valmsg-for="ApaDescripcion" data-valmsg-replace="true"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Agregar" class="btn btn-primary">
+            </div>
+            
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/Admin/Aparatos">Regresar a listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

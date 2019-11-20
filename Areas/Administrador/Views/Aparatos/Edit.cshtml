@@ -1,0 +1,38 @@
+﻿@model Proyectov1.Models.Aparato
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Tipo de Aparato</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="ApaId" />
+            <div class="form-group">
+                <label asp-for="ApaNombre" class="control-label">Tipo de Aparato</label>
+                <input asp-for="ApaNombre" class="form-control" />
+                <span asp-validation-for="ApaNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApaDescripcion" class="control-label">Descripci&oacute;n</label>
+                <input asp-for="ApaDescripcion" class="form-control" />
+                <span asp-validation-for="ApaDescripcion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/Admin/Aparatos">Regresar a listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,32 @@
+﻿@model Proyectov1.Models.Aparato
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Eliminar Tipo de Aparatos</h1>
+
+<h3>Esta seguro de eliminar a Tipo de Aparatos?</h3>
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Tipo de Aparato
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApaNombre)
+        </dd>
+        <dt class = "col-sm-2">
+            Descripci&oacute;n
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApaDescripcion)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="ApaId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a href="/Admin/Aparatos">Regresar a listado</a>
+    </form>
+</div>

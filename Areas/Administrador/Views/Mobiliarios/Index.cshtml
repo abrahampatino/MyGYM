@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Proyectov1.Models.Mobiliario>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>MI MOBILIARIO</h1>
+
+<p>
+    <a href="/Admin/Mobiliario/Create">Nuevo Mobiliario</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Nombre de Aparato
+            </th>
+            <th>
+                Estatus
+            </th>
+            <th>
+                Tipo de Aparato
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MobApaNombre)
+            </td>
+            @if (item.ApaEstatus.Value)
+            {
+                <td>Activo</td>
+            }
+            else
+            {
+                <td>Inactivo</td>
+            }
+            <td>
+                @Html.DisplayFor(modelItem => item.Apa.ApaNombre)
+            </td>
+            <td>
+                <a href="/Admin/Mobiliario/Edit/@item.MobId">Editar</a>|
+                <a href="/Admin/Mobiliario/Delete/@item.MobId">Eliminar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

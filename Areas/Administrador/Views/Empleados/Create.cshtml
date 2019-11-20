@@ -1,0 +1,70 @@
+﻿@model Proyectov1.Models.Persona
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Agregar Empleado</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label for="PerNombre" class="control-label">Primer Nombre</label>
+                <input asp-for="PerNombre" class="form-control" />
+                <span asp-validation-for="PerNombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="PerNombre2" class="control-label">Segundo Nombre</label>
+                <input asp-for="PerNombre2" class="form-control" />
+                <span asp-validation-for="PerNombre2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="PerPaterno" class="control-label">Apellido Paterno</label>
+                <input asp-for="PerPaterno" class="form-control" />
+                <span asp-validation-for="PerPaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="PerMaterno" class="control-label">Apellido Materno</label>
+                <input asp-for="PerMaterno" class="form-control" />
+                <span asp-validation-for="PerMaterno" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Usu.UsuName" class="control-label">Usuario</label>
+                <input asp-for="Usu.UsuName" class="form-control" />
+                <span asp-validation-for="Usu.UsuName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Usu.UsuPass" class="control-label">Contrase&ntilde;a</label>
+                <input type="password" asp-for="Usu.UsuPass" class="form-control" />
+                <span asp-validation-for="Usu.UsuPass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Usu.UsuPass" class="control-label">Email</label>
+                <input asp-for="Usu.UsuCorr" class="form-control" />
+                <span asp-validation-for="Usu.UsuCorr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="EmpRfc" class="control-label">RFC</label>
+                <input asp-for="EmpRfc" class="form-control" />
+                <span asp-validation-for="EmpRfc" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="EmpImss" class="control-label">IMSS</label>
+                <input asp-for="EmpImss" class="form-control" />
+                <span asp-validation-for="EmpImss" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Agregar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/Admin/Empleados">Regresar a Listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

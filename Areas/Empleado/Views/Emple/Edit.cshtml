@@ -1,0 +1,55 @@
+﻿@model Proyectov1.Models.Persona
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Editar Socio</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PerId" />
+            <div class="form-group">
+                <label for="Usuario" class="control-label">Usuario</label>
+                <input readonly name="Usuario" value="@Model.Usu.UsuName" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="Nombre" class="control-label">Nombre</label>
+                <input readonly name="Nombre" value="@String.Concat(Model.PerNombre, " ", Model.PerNombre2, " ", Model.PerPaterno, " ", Model.PerMaterno)" class="form-control" />
+            </div>
+
+            <div class="form-group">
+                <label for="SocAltura" class="control-label">Altura(m)</label>
+                <input asp-for="SocAltura" class="form-control" />
+                <span asp-validation-for="SocAltura" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="SocPeso" class="control-label">Peso(Kg)</label>
+                <input asp-for="SocPeso" class="form-control" />
+                <span asp-validation-for="SocPeso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="SocTelefono" class="control-label">Telefono</label>
+                <input asp-for="SocTelefono" class="form-control" />
+                <span asp-validation-for="SocTelefono" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Guardar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a href="/Admin/Socios">Regresar a Listado</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

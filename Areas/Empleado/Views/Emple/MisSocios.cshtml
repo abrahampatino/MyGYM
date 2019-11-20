@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Proyectov1.Models.Persona>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>MIS SOCIOS</h1>
+
+<p>Total de Socios: <strong>@ViewBag.numsocios</strong></p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre(s)</th>
+            <th>Apellidos</th>
+            <th>Altura</th>
+            <th>Peso</th>
+            <th>Telefono</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @String.Concat(item.PerNombre, " ", item.PerNombre2)
+            </td>
+            <td>
+                @String.Concat(item.PerPaterno, " ", item.PerMaterno)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocAltura) m
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocPeso) kg
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SocTelefono)
+            </td>
+            <td>
+                <a href="/Emple/MisSocios/Edit/@item.PerId">Editar</a> |
+                <a href="/Emple/Routine/@item.PerId">Ver Rutina</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
