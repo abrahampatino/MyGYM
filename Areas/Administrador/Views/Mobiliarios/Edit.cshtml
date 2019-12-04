@@ -9,30 +9,31 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="MobId" />
             <input type="hidden" asp-for="ApaId" />
-            <div class="form-group">
-                <label asp-for="MobApaNombre" class="control-label">Nombre de Mobiliario</label>
-                <input asp-for="MobApaNombre" class="form-control" />
-                <span asp-validation-for="MobApaNombre" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="MobApaNombre" class="control-label">Nombre de Mobiliario</label>
+                    <input asp-for="MobApaNombre" class="form-control" maxlength="25" min-length="7" placeholder="Caminadora 1" required/>
+                    <span asp-validation-for="MobApaNombre" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="ApaEstatus" class="control-label">Estado</label>
+                    <select asp-for="ApaEstatus" class="form-control">
+                        <option value="True" selected>Activo</option>
+                        <option value="False">Inactivo</option>
+                    </select>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="ApaEstatus" class="control-label">Estado</label>
-                <select asp-for="ApaEstatus" class="form-control">
-                    <option value="True" selected>Activo</option>
-                    <option value="False">Inactivo</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+
+            <div>
+                <div class="form-group-buttons">
+                    <a class="btn btn-success" href="/Admin/Mobiliario">Regresar a Listado</a>
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a href="/Admin/Mobiliario">Regresar a listado</a>
 </div>
 
 @section Scripts {

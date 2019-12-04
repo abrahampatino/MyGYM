@@ -56,3 +56,4 @@ D:\User\Desktop\Proyectov1\obj\Debug\netcoreapp2.2\Razor\Views\Shared\_LayoutEmp
 D:\User\Desktop\Proyectov1\obj\Debug\netcoreapp2.2\Razor\Areas\Empleado\Views\Emple\MiPerfil.g.cshtml.cs
 D:\User\Desktop\Proyectov1\obj\Debug\netcoreapp2.2\Razor\Areas\Empleado\Views\Emple\MisSocios.g.cshtml.cs
 D:\User\Desktop\Proyectov1\obj\Debug\netcoreapp2.2\Razor\Areas\Empleado\Views\Emple\Edit.g.cshtml.cs
+D:\User\Desktop\Proyectov1\obj\Debug\netcoreapp2.2\Razor\Views\Home\AcercaDe.g.cshtml.cs

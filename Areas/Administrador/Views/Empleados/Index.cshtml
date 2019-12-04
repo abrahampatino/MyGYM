@@ -6,9 +6,10 @@
 
 <h1>MIS EMPLEADOS</h1>
 
-<p>
+<a class="btn btn-primary" href="/Admin/Empleados/Create">Nuevo Empleado</a>
+<!--<p>
     <a href="/Admin/Empleados/Create">Nuevo Empleado</a>
-</p>
+</p>-->
 <table class="table">
     <thead>
         <tr>
@@ -56,15 +57,15 @@
             </td>
             @if (item.PerEstado.Value)
             {
-                <td>Activo</td>
+                <td class="active">Activo</td>
             }
             else
             {
-                <td>Inactivo</td>
+                <td class="inactive">Inactivo</td>
             }
-            <td>
-                <a href="/Admin/Empleados/Edit/@item.PerId">Editar</a>|
-                <a href="/Admin/Empleados/Delete/@item.PerId">Eliminar</a>
+            <td class="td-buttons">
+                <a class="btn btn-warning" href="/Admin/Empleados/Edit/@item.PerId">Editar</a>
+                <a class="btn btn-danger" href="/Admin/Empleados/Delete/@item.PerId">Eliminar</a>
             </td>
         </tr>
 }

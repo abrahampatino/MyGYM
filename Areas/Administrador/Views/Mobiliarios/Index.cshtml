@@ -6,9 +6,9 @@
 
 <h1>MI MOBILIARIO</h1>
 
-<p>
-    <a href="/Admin/Mobiliario/Create">Nuevo Mobiliario</a>
-</p>
+
+<a class="btn btn-primary" href="/Admin/Mobiliario/Create">Nuevo Mobiliario</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -32,19 +32,20 @@
             </td>
             @if (item.ApaEstatus.Value)
             {
-                <td>Activo</td>
+                <td class="active">Activo</td>
             }
             else
             {
-                <td>Inactivo</td>
+                <td class="inactive">Inactivo</td>
             }
             <td>
                 @Html.DisplayFor(modelItem => item.Apa.ApaNombre)
             </td>
-            <td>
-                <a href="/Admin/Mobiliario/Edit/@item.MobId">Editar</a>|
-                <a href="/Admin/Mobiliario/Delete/@item.MobId">Eliminar</a>
+            <td class="td-buttons">
+                <a class="btn btn-warning" href="/Admin/Mobiliario/Edit/@item.MobId">Editar</a>
+                <a class="btn btn-danger" href="/Admin/Mobiliario/Delete/@item.MobId">Eliminar</a>
             </td>
+
         </tr>
 }
     </tbody>

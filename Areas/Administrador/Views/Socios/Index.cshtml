@@ -6,9 +6,9 @@
 
 <h1>MIS SOCIOS</h1>
 
-<p>
-    <a href="/Admin/Socios/Create">Nuevo Socio</a>
-</p>
+
+<a class="btn btn-primary" href="/Admin/Socios/Create">Nuevo Socio</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -50,15 +50,15 @@
             </td>
             @if (item.PerEstado.Value)
             {
-                <td>Activo</td>
+                <td class="active">Activo</td>
             }
             else
             {
-                <td>Inactivo</td>
+                <td class="inactive">Inactivo</td>
             }
-            <td>
-                <a href="/Admin/Socios/Edit/@item.PerId">Editar</a>|
-                <a href="/Admin/Socios/Delete/@item.PerId">Eliminar</a>
+            <td class="td-buttons">
+                <a class="btn btn-warning" href="/Admin/Socios/Edit/@item.PerId">Editar</a>
+                <a class="btn btn-danger" href="/Admin/Socios/Delete/@item.PerId">Eliminar</a>
             </td>
         </tr>
 }

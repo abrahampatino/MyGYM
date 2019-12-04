@@ -26,6 +26,7 @@ namespace Proyectov1.Controllers
         [AllowAnonymous]
         public ActionResult Index()
         {
+            ViewBag.Error = false;
             return View("Login");
         }
 
@@ -34,6 +35,7 @@ namespace Proyectov1.Controllers
         {
             try
             {
+
                 var user = _context.Usuario.Where(u => u.UsuName == login.User).Single();
 
                 if (user.UsuName.Equals(login.User) && user.UsuPass.Equals(login.Password))
@@ -71,12 +73,13 @@ namespace Proyectov1.Controllers
                 }
                 else
                 {
-                    
+                    ViewBag.Error = true;
                     return View("Login");
                 }
             }
             catch(Exception)
             {
+                ViewBag.Error = true;
                 return View("Login");
             }
         }
@@ -113,5 +116,12 @@ namespace Proyectov1.Controllers
             HttpContext.SignOutAsync("Cookies");
             return Redirect("/");
         }
+
+        [AllowAnonymous]
+        public IActionResult AcercaDe()
+        {
+            return View();
+        }
+
     }
 }

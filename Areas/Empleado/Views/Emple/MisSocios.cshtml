@@ -6,7 +6,7 @@
 
 <h1>MIS SOCIOS</h1>
 
-<p>Total de Socios: <strong>@ViewBag.numsocios</strong></p>
+<p class="totales">Total de Socios: <strong>@ViewBag.numsocios</strong></p>
 <table class="table">
     <thead>
         <tr>
@@ -36,9 +36,9 @@
             <td>
                 @Html.DisplayFor(modelItem => item.SocTelefono)
             </td>
-            <td>
-                <a href="/Emple/MisSocios/Edit/@item.PerId">Editar</a> |
-                <a href="/Emple/Routine/@item.PerId">Ver Rutina</a>
+            <td class="td-buttons">
+                <a class="btn btn-warning" href="/Emple/MisSocios/Edit/@item.PerId">Editar</a>
+                <a class="btn btn-primary" href="/Emple/Routine/@item.PerId">Ver Rutina</a>
             </td>
         </tr>
 }

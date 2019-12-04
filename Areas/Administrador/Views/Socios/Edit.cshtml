@@ -10,101 +10,103 @@
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Edit">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="PerId" />
-            <div class="form-group">
-                <label for="PerNombre" class="control-label">Primer Nombre</label>
-                <input asp-for="PerNombre" class="form-control" />
-                <span asp-validation-for="PerNombre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="PerNombre2" class="control-label">Segundo Nombre</label>
-                <input asp-for="PerNombre2" class="form-control" />
-                <span asp-validation-for="PerNombre2" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="PerPaterno" class="control-label">Apellido Paterno</label>
-                <input asp-for="PerPaterno" class="form-control" />
-                <span asp-validation-for="PerPaterno" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="PerMaterno" class="control-label">Apellido Materno</label>
-                <input asp-for="PerMaterno" class="form-control" />
-                <span asp-validation-for="PerMaterno" class="text-danger"></span>
-            </div>
             <input type="hidden" asp-for="UsuId" />
             <input type="hidden" asp-for="PerTipo" />
             <input type="hidden" asp-for="Usu.UsuId" />
-
-
-            <div class="form-group">
-                <label for="SocAltura" class="control-label">Altura(m)</label>
-                <input asp-for="SocAltura" class="form-control" />
-                <span asp-validation-for="SocAltura" class="text-danger"></span>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="PerNombre" class="control-label">Primer Nombre</label>
+                    <input asp-for="PerNombre" class="form-control" maxlength="15" minlength="3" placeholder="Isaac" required />
+                    <span asp-validation-for="PerNombre" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="PerNombre2" class="control-label">Segundo Nombre</label>
+                    <input asp-for="PerNombre2" class="form-control" maxlength="15" minlength="0" placeholder="Abraham" />
+                    <span asp-validation-for="PerNombre2" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="PerPaterno" class="control-label">Apellido Paterno</label>
+                    <input asp-for="PerPaterno" class="form-control" maxlength="15" minlength="3" placeholder="Cruz" required />
+                    <span asp-validation-for="PerPaterno" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="PerMaterno" class="control-label">Apellido Materno</label>
+                    <input asp-for="PerMaterno" class="form-control" maxlength="15" minlength="3" placeholder="Medina" required />
+                    <span asp-validation-for="PerMaterno" class="text-danger"></span>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="SocPeso" class="control-label">Peso(Kg)</label>
-                <input asp-for="SocPeso" class="form-control" />
-                <span asp-validation-for="SocPeso" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="SocTelefono" class="control-label">Telefono</label>
-                <input asp-for="SocTelefono" class="form-control" />
-                <span asp-validation-for="SocTelefono" class="text-danger"></span>
-            </div>
 
-            <div class="form-group">
-                <label asp-for="InsoInst" class="control-label">Instructor</label>
-                <select asp-for="InsoInst" class="form-control">
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="SocAltura" class="control-label">Altura(m)</label>
+                    <input asp-for="SocAltura" class="form-control" type="number" placeholder="1.78" step="0.1" max="2.10" min="1.2" required />
+                    <span asp-validation-for="SocAltura" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="SocPeso" class="control-label">Peso(Kg)</label>
+                    <input asp-for="SocPeso" class="form-control" type="number" placeholder="55.5" step=".1" max="110" min="40" required />
+                    <span asp-validation-for="SocPeso" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="SocTelefono" class="control-label">Telefono</label>
+                    <input asp-for="SocTelefono" type="number" class="form-control" maxlength="10" minlength="10" placeholder="5512345678" required />
+                    <span asp-validation-for="SocTelefono" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-8">
+                    <label for="Usu.UsuName" class="control-label">Usuario</label>
+                    <input asp-for="Usu.UsuName" class="form-control" maxlength="20" minlength="5" placeholder="user-00" required />
+                    <span asp-validation-for="Usu.UsuName" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="Usu.UsuPass" class="control-label">Contrase&ntilde;a</label>
+                    <input type="password" asp-for="Usu.UsuPass" class="form-control" maxlength="15" minlength="5" placeholder="******" required />
+                    <span asp-validation-for="Usu.UsuPass" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-8">
+                    <label for="Usu.UsuName" class="control-label">Usuario</label>
+                    <input type="email" asp-for="Usu.UsuCorr" class="form-control" maxlength="45" minlength="13" placeholder="mi.correo@correo.com" required />
+                    <span asp-validation-for="Usu.UsuCorr" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-10">
+                    <label asp-for="InsoInst" class="control-label">Instructor</label>
+                    <select asp-for="InsoInst" class="form-control">
 
-                    @foreach (var item in (List<Persona>)ViewBag.Instru)
-                    {
-                        if (item.PerId == Model.InsoInst)
+                        @foreach (var item in (List<Persona>)ViewBag.Instru)
                         {
-                            <option value="@item.PerId" selected>@String.Concat(item.PerNombre, " ", item.PerNombre2, " ", item.PerPaterno, " ", item.PerMaterno)</option>
+                            if (item.PerId == Model.InsoInst)
+                            {
+                                <option value="@item.PerId" selected>@String.Concat(item.PerNombre, " ", item.PerNombre2, " ", item.PerPaterno, " ", item.PerMaterno)</option>
+                            }
+                            else
+                            {
+                                <option value="@item.PerId">@String.Concat(item.PerNombre, " ", item.PerNombre2, " ", item.PerPaterno, " ", item.PerMaterno)</option>
+                            }
+
                         }
-                        else
-                        {
-                            <option value="@item.PerId">@String.Concat(item.PerNombre, " ", item.PerNombre2, " ", item.PerPaterno, " ", item.PerMaterno)</option>
-                        }
+                    </select>
+                </div>
 
-                    }
-                </select>
+                <div class="form-group col-md-10">
+                    <label for="PerEstado" class="control-label">Estado</label>
+                    <select asp-for="PerEstado" class="form-control">
+                        <option value="True" selected>Activo</option>
+                        <option value="False">Inactivo</option>
+                    </select>
+                </div>
             </div>
-
-            <div class="form-group">
-                <label for="Usu.UsuName" class="control-label">Usuario</label>
-                <input asp-for="Usu.UsuName" class="form-control" />
-                <span asp-validation-for="Usu.UsuName" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="Usu.UsuPass" class="control-label">Contrase&ntilde;a</label>
-                <input asp-for="Usu.UsuPass" class="form-control" />
-                <span asp-validation-for="Usu.UsuPass" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label for="Usu.UsuName" class="control-label">Usuario</label>
-                <input asp-for="Usu.UsuCorr" class="form-control" />
-                <span asp-validation-for="Usu.UsuCorr" class="text-danger"></span>
-            </div>
-
-            <div class="form-group">
-                <label for="PerEstado" class="control-label">Estado</label>
-                <select asp-for="PerEstado" class="form-control">
-                    <option value="True" selected>Activo</option>
-                    <option value="False">Inactivo</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Guardar" class="btn btn-primary" />
+            <div>
+                <div class="form-group-buttons">
+                    <a class="btn btn-success" href="/Admin/Socios">Regresar a Listado</a>
+                    <input type="submit" value="Guardar" class="btn btn-primary" />
+                </div>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a href="Emple/MisSocios">Regresar a Listado</a>
 </div>
 
 @section Scripts {

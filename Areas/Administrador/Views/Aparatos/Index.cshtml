@@ -7,10 +7,8 @@
 
 <h1>MIS TIPOS DE APARATOS</h1>
 
-<p>
-    
-    <a href="/Admin/Aparatos/Create">Nuevo Tipo de Aparatos</a>
-</p>
+<a class="btn btn-primary" href="/Admin/Aparatos/Create">Nuevo Tipo de Aparatos</a>
+
 <table class="table">
     <thead>
         <tr>
@@ -33,8 +31,8 @@
                 @Html.DisplayFor(modelItem => item.ApaDescripcion)
             </td>
             <td>
-                <a href="/Admin/Aparatos/Edit/@item.ApaId">Editar</a>|                
-                <a href="/Admin/Aparatos/Delete/@item.ApaId">Eliminar</a>
+                <a class="btn btn-warning" href="/Admin/Aparatos/Edit/@item.ApaId">Editar</a>             
+                <a class="btn btn-danger" href="/Admin/Aparatos/Delete/@item.ApaId">Eliminar</a>
             </td>
         </tr>
 }
